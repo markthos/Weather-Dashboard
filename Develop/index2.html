@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Weather Dashboard</h1>
+  
+  <div id="search-form">
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button id="search-button">Search</button>
+  </div>
+  
+  <div id="search-history">
+    <h2>Search History</h2>
+    <ul id="history-list"></ul>
+  </div>
+
+  <div id="current-weather">
+    <h2>Current Weather</h2>
+    <div id="current-city"></div>
+    <div id="current-date"></div>
+    <img id="weather-icon" src="" alt="Weather Icon">
+    <div id="current-temp"></div>
+    <div id="current-humidity"></div>
+    <div id="current-wind-speed"></div>
+  </div>
+
+  <div id="forecast">
+    <h2>5-Day Forecast</h2>
+    <div id="forecast-list"></div>
+  </div>
+
+  <script>
+    var apiKey = "YOUR_API_KEY";
+
+    // Function to fetch weather data
+    function getWeatherData(city) {
+      var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+
+      $.ajax( {
+        url: apiUrl,
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+          // Update current weather section
+          var currentWeather = response.list[0];
+          var city = response.city.name;
+          var date = new Date(currentWeather.dt_txt);
+          var iconUrl = `http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
+          var temperature = currentWeather.main.temp;
+          var humidity = currentWeather.main.humidity;
+          var windSpeed = currentWeather.wind.speed;
+
+          $("#current-city").text(city);
+          $("#current-date").text(date.toDateString());
+          $("#weather-icon").attr("src", iconUrl);
+          $("#current-temp").text("Temperature: " + temperature + "°C");
+          $("#current-humidity").text("Humidity: " + humidity + "%");
+          $("#current-wind-speed").text("Wind Speed: " + windSpeed + "m/s");
+
+          // Update forecast section
+          $("#forecast-list").empty();
+
+          for (var i = 1; i < response.list.length; i += 8) {
+            var forecast = response.list[i];
+            var forecastDate = new Date(forecast.dt_txt);
+            var forecastIconUrl = `http://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
+            var forecastTemp = forecast.main.temp;
+            var forecastHumidity = forecast.main.humidity;
+            var forecastWindSpeed = forecast.wind.speed;
+
+            var forecastItem = `
+              <div class="forecast-item">
+                <div>${forecastDate.toDateString()}</div>
+                <img src="${forecastIconUrl}" alt="Weather Icon">
+                <div>Temperature: ${forecastTemp}°C</div>
+                <div>Humidity: ${forecastHumidity}%</div>
+                <div>Wind Speed: ${forecastWindSpeed}m/s</div>
+              </div>
+            `;
+
+            $("#forecast-list").append(forecastItem);
+                  // Update search history
+            $("#history-list").prepend(`<li>${city}</li>`);
+          }
+        }
+      });
+    }
+
+// Event listener for search button
+$("#search-button").click(function() {
+  var city = $("#city-input").val().trim();
+  if (city !== "") {
+    getWeatherData(city);
+    $("#city-input").val("");
+  }
+});
+
+// Event listener for search history
+$("#history-list").on("click", "li", function() {
+  var city = $(this).text();
+  getWeatherData(city);
+});
+
