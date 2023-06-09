@@ -6,6 +6,34 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        Weather Dashboard
+    </header>
+    <main>
+        <h1>Search for a city</h1>
+        <form action="index.php" method="post">
+            <input type="text" name="city" id="city" placeholder="City Name">
+            <input type="submit" value="Search">
+        </form>
+        <div class="weather">
+            <h2>Weather in <?php echo $city; ?></h2>
+            <div class="weather__info">
+                <div class="weather__info__temp">
+                    <h3>Temperature</h3>
+                    <p><?php echo $temp; ?>°C</p>
+                </div>
+                <div class="weather__info__humidity">
+                    <h3>Humidity</h3>
+                    <p><?php echo $humidity; ?>%</p>
+                </div>
+                <div class="weather__info__wind">
+                    <h3>Wind Speed</h3>
+                    <p><?php echo $wind; ?> km/h</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
     
 </body>
 </html>
