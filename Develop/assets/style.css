@@ -1,0 +1,32 @@
+.forecast-item {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+#current-weather {
+    background-color: lightskyblue;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+#search-history {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  } 
+
+#history-list {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }  
+  
