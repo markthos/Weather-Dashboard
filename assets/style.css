@@ -30,6 +30,19 @@
     border-radius: 5px;
   }  
   
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
+#search-button {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+#clear-history {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
