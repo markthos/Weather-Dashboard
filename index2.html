@@ -7,15 +7,11 @@
 </head>
 <body>
   <h1>Weather Dashboard</h1>
-  
+ <main class="container">
+
   <div id="search-form">
     <input type="text" id="city-input" placeholder="Enter city name">
     <button id="search-button">Search</button>
-  </div>
-  
-  <div id="search-history">
-    <h2>Search History</h2>
-    <ul id="history-list"></ul>
   </div>
 
   <div id="current-weather">
@@ -26,13 +22,19 @@
     <div id="current-temp"></div>
     <div id="current-humidity"></div>
     <div id="current-wind-speed"></div>
+  </div>  
+
+  <div id="search-history">
+    <h2>Search History</h2>
+    <ul id="history-list"></ul>
   </div>
 
   <div id="forecast">
     <h2>5-Day Forecast</h2>
     <div id="forecast-list"></div>
   </div>
-
+  
+</main>
   <script src="assets/script.js"></script>
 </body>
 </html>
