@@ -1,38 +1,41 @@
 # Weather-Dashboard
 
-  ![License](https://img.shields.io/badge/License-mit-blue.svg)
+![License](https://img.shields.io/badge/License-mit-blue.svg)
 
-  ## Description
-  This application allows a user to search cities around the world and see the current weather as well as a 5 day forecast of weather in that city.
+## Description
+This application allows a user to search cities around the world and see the current weather as well as a 5 day forecast of weather in that city.
+<img src="./assets/Weather-Dashboard.png">
 
-  ## Table of Contents
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contribution](#contribution)
-  - [Testing](#test)
-  - [Questions](#questions)
-  - [Contact Info](#contact-info)
+## Table of Contents (if applicable)
 
-  ## Installation
-  First, clone this repository. Next download and install Node.js if you do not have it already installed. Open the repository in VS Code, or whichever IDE you prefer to use. In your IDE open a new terminal and enter the following into the terminal: npm install inquirer. Note that the directory in the terminal needs to be the same as the location of the Professional README Generator folder. This concludes the installation. Once the installation is done you can start using the generator application by opening a new terminal window, type: node index, and press the Enter key.
+- [Description](#description)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contact Info](#contact-info)
 
-  ## Usage
-  Dynamically generates a professional README.md file by invoking the node index.js command and a user’s input using the Inquirer package.
-  
-  ## License
-  This project is covered under the MIT [License](https://choosealicense.com/licenses/${license}).
 
-  ## Contribution
-  Please pay me. 😊 Just kidding (or am I!?)! You can contribute by sprucing this project up so the generated README.md file looks even nicer than it currently does.
 
-  ## Testing
-  Try breaking this application by inputting stuff that cannot be recognized. Any other form of stress test is recommended.
+## Features
 
-  ## Questions
-  You can find the link to my application [here](https://github.com/kstaver/Professional-README-Generator).
-  If you have any questions pertaining to Professional README Generator, feel free to contact me.
-  
-  ## Contact Info
-  - Github: [kstaver](https://github.com/kstaver)
+- Interactive and responsive site that allows users to search using a third party weather api
+- Saves searches to local storage and maintains a clean search history
+- Displays dynamically retrieved data of current and 5-day forecasted weather data
+- It is responsive and mobile ready and pretty in blue
+
+## Installation
+
+-N/A
+
+## Usage
+Click this [link](https://markthos.github.io/Weather-Dashboard/) to the github deployed page.  Begin by searching for any city in the world. When you press enter or search you should see the current weather trends for today with a future forecast for the next 5 days beneath it. Your searches are saved to local storage so you can always revisit previous searches.
+
+## License
+This project is covered under the MIT [License](https://choosealicense.com/licenses/${license}).
+
+
+## Contact Info
+
+- Github: [https://github.com/markthos](https://github.com/https://github.com/markthos)
+- Email: aydenthos@gmail.com
