@@ -2,6 +2,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Style for the header */
@@ -10,6 +11,7 @@ header {
     text-align: center;
     color: white;
     padding: 20px 0;
+    border-radius: 0px 5px;
 }
 
 /* Flexbox styles for responsive layout */
@@ -20,7 +22,13 @@ header {
     height: 100vh;
 }
 
-.left-nav,
+.left-nav{
+    flex: 1;
+    min-width: 100px;
+    max-width: 250px;
+    padding: 20px;
+}
+
 .weather-dashboard {
     flex: 1;
     min-width: 300px;
@@ -36,8 +44,12 @@ header {
 
 /* Style for the history list buttons */
 .history-button {
+    display: block;
+    width: 100%;
+    text-align: left;
     background-color: #f5f5f5;
     border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 5px 10px;
     margin: 5px;
     cursor: pointer;
@@ -68,11 +80,36 @@ header {
 
 /* Style for the current weather section */
 #current-weather {
-    background-color: lightskyblue;
+    background: linear-gradient(to top, #87CEEB, #1E90FF);
     color: white;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    text-align: center;
+}
+
+/* Style for the current weather header */
+#current-weather-header {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+#current-city,
+#current-date {
+    margin: 10px;
+}
+
+#current-date {
+    font-size: 1.2em;
+    font-style: normal;
+}
+
+/* Style for the weather icon in the current weather section */
+#current-weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
 }
 
 /* Style for the forecast section */
@@ -83,8 +120,6 @@ header {
     margin-bottom: 10px;
     border-radius: 5px;
 }
-
-
     
 /* Style for the forecast list */
 #forecast-list {
@@ -101,6 +136,19 @@ header {
     text-align: center;
     padding: 10px;
     border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 5px;
+    background: #1E90FF;
+}
+
+/* Stlye for hover state on forecast item */
+.forecast-item:hover {
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    
 }
 
 /* Responsive layout adjustments */
