@@ -124,6 +124,7 @@ header {
 /* Style for the forecast list */
 #forecast-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
     padding: 0;
@@ -139,6 +140,7 @@ header {
     margin: 5px;
     border-radius: 5px;
     background: #1E90FF;
+    max-width: calc(20% - 10px);
 }
 
 /* Stlye for hover state on forecast item */
