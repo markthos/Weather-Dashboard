@@ -1,0 +1,95 @@
+
+/* Reset default margin and padding for body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the header */
+header {
+  background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+}
+
+/* Flexbox styles for responsive layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.left-nav,
+.weather-dashboard {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  /* Center the stacked sections */
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust width and padding for stacking */
+  .left-nav,
+  .weather-dashboard {
+    width: 100%;
+    min-width: auto;
+    padding: 10px;
+  }
+
+  /* Stack current-weather and forecast sections */
+  #current-weather,
+  #forecast {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Style for the forecast list */
+#forecast-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for individual forecast item */
+.forecast-item {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+  
+  /* Responsive layout adjustments */
+  @media (max-width: 768px) {
+    /* Center the stacked sections */
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Adjust width and padding for stacking */
+    .left-nav,
+    .weather-dashboard {
+      width: 100%;
+      min-width: auto;
+      padding: 10px;
+    }
+
+    /* Stack current-weather and forecast sections */
+    #current-weather,
+    #forecast {
+      width: 100%;
+      max-width: none;
+    }
+  }
+  
